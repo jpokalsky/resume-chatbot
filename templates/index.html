@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+</script>
+
+</head>
+
+<body>
+
+  <ul id="siteNav" class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" href="/">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Bio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Contact</a>
+    </li>
+  </ul>
+
+  <h3> This is a chatbot version of my resume</h3>
+  <h2> I can answer information about my resume and other career related questions</h2>
+  <h2>Ask me questions like "what is your current GPA?" or "Why did you decide to double major in Finance & MIS?" </h2>
+
+
+  <div id="chatBox">
+    <p class="botText"><span>Hi, my name is Jake Pokalsky.</span></p>
+  </div>
+
+  <div id="userInput">
+    <input id="textInput" type="text" name="msg" placeholder="message">
+    <input class="btn btn-primary" onsubmit="updatePosition" id="buttonInput" type="submit" value="Send">
+  </div>
+
+  <div align="center">
+    <form method="get" action="JPResume.pdf">
+      <button type="submit" id="downloadButton" class="btn btn-primary"><i class="fa fa-download"></i> Download Resume</button>
+    </form>
+  </div>
+  <footer>
+  <div class = "bottom">
+    <p style=text-align="center" size="45"> built with <a href="https://github.com/gunthercox/ChatterBot">Gunthercox's machine learning conversation engine</a> and <a href="https://github.com/chamkank/flask-chatterbot">chamkank's flask template</a></p>
+  </div>
+  </footer>
+  <script>
+
+
+    function getBotResponse() {
+      var userText = $('#textInput').val();
+      var userBlock = '<p class = "userText"><span>' + userText + '</span></p>';
+      $('#textInput').val("");
+      $('#chatBox').append(userBlock);
+      document.getElementById('userInput').scrollIntoView({
+        block: 'start',
+        behavior: 'smooth'
+      });
+      $.get('/get', {
+        msg: userText
+      }).done(function(data) {
+        var botResponse = '<p class = "botText"><span>' + data + '</span></p>';
+        $('#chatBox').append(botResponse);
+        var elmnt = document.getElementById("chatBox");
+        elmnt.scrollTop = elmnt.scrollHeight;
+        document.getElementById('userInput').scrollIntoView({
+          block: 'start',
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    $("#textInput").keypress(function(e) {
+      if (e.which == 13) {
+        getBotResponse();
+        var elmnt = document.getElementById("chatBox");
+        elmnt.scrollTop = elmnt.scrollHeight;
+      }
+    });
+    $("#buttonInput").click(function() {
+      getBotResponse();
+      var elmnt = document.getElementById("chatBox");
+      elmnt.scrollTop = elmnt.scrollHeight;
+    });
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

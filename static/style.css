@@ -1,0 +1,148 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: white;
+
+}
+
+
+
+h3 {
+    color: #AA4465;
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+  color: #AA4465;
+  font-size: 14px;
+  margin-top: 3px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+
+}
+
+h1 {
+    color: #AA4465;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+    font-size: 40px;
+}
+
+.userText {
+    color: #AA4465;
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    text-align: right;
+    line-height: 30px;
+}
+
+.userText span {
+    background-color: #EAF2EF;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.botText {
+    color: #861657;
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    text-align: left;
+    line-height: 30px;
+}
+
+.botText span {
+    background-color: #C0F9EC; /* Ice Blue */
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.nav-link {
+  color : #AA4465 !important;
+}
+
+.nav-item a:hover {
+    color: #861657 !important;
+        }
+
+
+/* unvisited link */
+a:link {
+    color: #757977 !important;
+}
+
+/* visited link */
+a:visited {
+    color: #757977 !important;
+}
+
+
+#tidbit {
+    position:absolute;
+    bottom:0;
+    right:0;
+    width: 300px;
+}
+
+.btn-primary {
+    background-color : #C0F9EC; /* Ice Blue */
+    position: relative;
+    color: #861657;
+    border-color: #861657;
+}
+
+#downloadButton {
+    margin-top: 50px;
+    background-color : #C0F9EC; /* Ice Blue */
+    position: relative;
+    color: #861657;
+    border-color: #861657;
+}
+
+#siteNav {
+  background-color:#C0F9EC; /* Ice Blue */
+}
+
+
+#chatBox {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    margin-top: 50px;
+    height: 250px;
+    overflow: scroll;
+}
+
+#userInput {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 60px;
+}
+
+#textInput {
+    width: 87%;
+    border: none;
+    border-bottom: 3px solid #C8D8EB;
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    color : #861657;
+}
+
+#buttonInput {
+    padding: 3px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #861657;
+    font-family: 'Raleway', sans-serif;
+}
